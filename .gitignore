@@ -1,0 +1,20 @@
+# Terraform files
+**/.terraform/*
+**/.terraform.lock.hcl
+*.tfstate
+*.tfstate.*
+
+## Misc files
+*.bak
+*.zip
+*.swp
+*.DS_Store
+*.map
+*.log
+*.coverage
+*.ipynb_checkpoints
+*.py[cod]
+__pycache__/
+# mypy
+.mypy_cache/
+.idea/
