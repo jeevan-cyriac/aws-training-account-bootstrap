@@ -1,7 +1,7 @@
 ## placeholder
 
 provider "aws" {
-  profile = "jeevan-personal-training"
+  profile = "training"
   region  = "us-east-1"
   default_tags {
     tags = {
@@ -23,7 +23,7 @@ terraform {
     key     = "prod/account-bootstrap/terraform.tfstate"
     bucket  = "jeevan-personal-training-terraform-statefiles"
     region  = "us-east-1"
-    profile = "jeevan-personal-training"
+    profile = "training"
   }
 }
 
