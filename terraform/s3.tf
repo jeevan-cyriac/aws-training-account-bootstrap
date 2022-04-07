@@ -1,5 +1,5 @@
 resource "aws_s3_bucket" "tf_statefiles" {
-  bucket = "${var.account_name}-terraform-statefiles"
+  bucket = "jeevan-personal-training-terraform-statefiles"
 }
 
 resource "aws_s3_bucket_acl" "tf_statefiles" {
