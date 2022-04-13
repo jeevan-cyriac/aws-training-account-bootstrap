@@ -4,3 +4,5 @@ data "aws_route53_zone" "jeevancyriac" {
 }
 
 data "aws_caller_identity" "current" {}
+
+data "aws_organizations_organization" "main" {}

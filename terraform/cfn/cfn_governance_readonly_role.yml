@@ -1,0 +1,37 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: Org governance - ReadOnly role
+
+Parameters:
+  MasterAccountId:
+    AllowedValues:
+      - '515708633777'
+    Default: '515708633777'
+    Type: String
+
+Resources:
+  ReadRole:
+    Type: AWS::IAM::Role
+    Properties:
+      RoleName: "org-governance-readonly"
+      Path: /
+      Description: "IAM Role for Org Master Account to have cross account ReadOnly access on the member account"
+      AssumeRolePolicyDocument:
+        Version: 2012-10-17
+        Statement:
+          - Effect: Allow
+            Principal:
+              AWS:
+                - !Ref 'MasterAccountId'
+            Action:
+              - sts:AssumeRole
+      ManagedPolicyArns:
+        - arn:aws:iam::aws:policy/ReadOnlyAccess
+      Tags:
+        - Key: "Name"
+          Value: "governance-readonly"
+        - Key: "project"
+          Value: "cloud-governance"
+        - Key: "env"
+          Value: "prod"
+        - Key: "description"
+          Value: "IAM Role for Org Master Account to have cross account ReadOnly access on the member account"

@@ -2,7 +2,7 @@
 
 provider "aws" {
   profile = "jeevan-master"
-  region  = "us-east-1"
+  region  = var.aws_region
   default_tags {
     tags = {
       env        = "prod"
@@ -16,7 +16,7 @@ terraform {
   required_providers {
     aws = {
       source  = "hashicorp/aws"
-      version = ">= 4.0.0"
+      version = ">= 4.9.0"
     }
   }
   backend "s3" {
